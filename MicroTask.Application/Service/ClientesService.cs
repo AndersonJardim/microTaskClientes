@@ -12,7 +12,7 @@ namespace MicroTask.Application.Service
             await clientesRepository.GetAllAsync();
         public async Task<Clientes?> GetByIdAsync(int id) =>
             await clientesRepository.GetByIdAsync(id);
-        public async Task<int> AddAsync(Clientes cliente) =>
+        public async Task<Clientes> AddAsync(Clientes cliente) =>
             await clientesRepository.AddAsync(cliente);
         public async Task UpdateAsync(Clientes cliente) =>
             await clientesRepository.UpdateAsync(cliente);

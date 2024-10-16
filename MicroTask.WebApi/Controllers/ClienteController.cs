@@ -34,7 +34,7 @@ namespace MicroTask.WebApi.Controllers
             return Ok(clientes);
         }
 
-        [HttpGet("{id}")]
+        [HttpGet]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
@@ -60,7 +60,7 @@ namespace MicroTask.WebApi.Controllers
         public async Task<IActionResult> CreateAsync([FromBody] Clientes cliente)
         {
             var result = await clientesService.AddAsync(cliente);
-            return CreatedAtAction(nameof(GetByIdAsync), new { id = result }, cliente);
+            return Ok(result);
         }
 
         [HttpPut]
@@ -72,7 +72,7 @@ namespace MicroTask.WebApi.Controllers
             return NoContent();
         }
 
-        [HttpDelete("{id}")]
+        [HttpDelete]
         [ProducesResponseType(StatusCodes.Status204NoContent)]
         public async Task<IActionResult> DeleteAsync(int id)
         {

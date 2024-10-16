@@ -7,7 +7,7 @@ namespace MicroTask.Domain.Interfaces
     {
         Task<IEnumerable<Clientes>> GetAllAsync();
         Task<Clientes?> GetByIdAsync(int id);
-        Task<int> AddAsync(Clientes cliente);
+        Task<Clientes> AddAsync(Clientes cliente);
         Task UpdateAsync(Clientes cliente);
         Task<int> DeleteAsync(int id);
     }
