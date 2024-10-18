@@ -15,7 +15,7 @@ namespace MicroTask.Infra.Data
         }
         public async Task<Clientes?> GetByIdAsync(int id)
         {
-            var query = "SELECT TOP 1 FROM Clientes WHERE Id = @Id";
+            var query = "SELECT TOP 1 * FROM Clientes WHERE Id = @Id";
             return await dbConnection.QueryFirstOrDefaultAsync<Clientes>(query, new { Id = id });
         }
         public async Task<Clientes> AddAsync(Clientes cliente)
